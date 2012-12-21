@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.octo.dao.ContactMapper">
+
+	<cache />
+
+  	<select id="selectContact" resultType="com.octo.dao.Contact" parameterType="String">
+  		select firstname, lastname from contact
+  	</select>
+  	
+  	<insert id="insertContact" parameterType="com.octo.dao.Contact">
+  		insert into Contact (firstname,lastname) values (#{firstName},#{lastName})
+  	</insert>
+
+</mapper>
